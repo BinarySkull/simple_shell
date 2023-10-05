@@ -1,1 +1,1 @@
-# simple_shell
+The final C project for ALX software programming.
