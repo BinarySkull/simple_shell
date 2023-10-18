@@ -3,7 +3,7 @@
  * _strtok - function is called ny another file called main.c
  * Description: for alx project malloc
  * @sign: an argument
- * @str: an argumentt
+ * @str: an argument
  * Return: 0 on success
  */
 char *_strtok(char *str, const char *sign)
