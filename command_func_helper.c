@@ -3,7 +3,7 @@
  * pwd_ch - change pwd
  * Description: for simple shell task
  * @arg: an argument
- * Return: 1 on successs
+ * Return: 1 on success
 */
 void pwd_ch(_arg *arg)
 {
