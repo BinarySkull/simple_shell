@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * _strcmp - compares strings
- * Description: for alx project simple shell
+ * Description: For the Alx project simple shell
  * @s1: '*s1' is a pointer
  * @s2: '*s2' is a pointer
  * Return: Always 0.
