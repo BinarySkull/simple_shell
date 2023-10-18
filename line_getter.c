@@ -3,7 +3,7 @@
  * line_getter - to help in simple shell
  * Description: for simple shell task
  * @arg: an argument
- * Return: 1 on sucess
+ * Return: 1 on success
 */
 ssize_t line_getter(_arg *arg)
 {
