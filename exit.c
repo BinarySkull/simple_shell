@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- * prog_exit - to exit program with no leaks
+ * prog_exit - to exit the program with no leaks
  * Description: for simple shell task
  * @arg: an argument
- * Return: 1 on sucess
+ * Return: 1 on success
 */
 void prog_exit(_arg *arg)
 {
