@@ -8,19 +8,19 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-    while (*s1 && *s2)
-    {
-        if (*s1 != *s2)
-        {        
-            return (*s1 - *s2);
-        }
-        s1++;
-        s2++;
-    }
-    if (*s1 == *s2)
-        return (0);
-    else
-        return (*s1 - *s2);
+while (*s1 && *s2)
+{
+if (*s1 != *s2)
+{
+return (*s1 - *s2);
+}
+s1++;
+s2++;
+}
+if (*s1 == *s2)
+return (0);
+else
+return (*s1 - *s2);
 }
 /**
  * _strlen - calulate the length of string
@@ -30,9 +30,9 @@ int _strcmp(char *s1, char *s2)
  */
 int _strlen(char *s)
 {
-	int length;
+	int length = 0;
 
-	for (length = 0; s[length];)
+	while (s[length])
 	{
 		length++;
 	}
@@ -47,18 +47,18 @@ int _strlen(char *s)
  */
 char *_strcat(char *dest, char *src)
 {
-    int length1;
-    int length2;
+int length1 = 0;
+int length2 = 0;
 
-    for (length1 = 0; dest[length1] != 0;)
-        length1++;
-    for (length2 = 0; src[length2] != 0;)
-    {
-        dest[length1 + length2] = src[length2];
-        length2++;
-    }
-    dest[length1 + length2] = '\0';
-    return (dest);
+while (dest[length1] != 0)
+length1++;
+while (src[length2] != 0)
+{
+dest[length1 + length2] = src[length2];
+length2++;
+}
+dest[length1 + length2] = '\0';
+return (dest);
 }
 /**
  * _strncat - fucntion that is mintioned in another code
@@ -70,18 +70,18 @@ char *_strcat(char *dest, char *src)
  */
 char *_strncat(char *dest, char *src, int n)
 {
-    int length1 = 0;
-    int length2 = 0;
+int length1 = 0;
+int length2 = 0;
 
-    while (dest[length1] != 0)
-        length1++;
-    while (src[length2] != 0 && length2 < n)
-    {
-        dest[length1] = src[length2];
-        length1++;
-        length2++;
-    }
-    return (dest);
+while (dest[length1] != 0)
+length1++;
+while (src[length2] != 0 && length2 < n)
+{
+dest[length1] = src[length2];
+length1++;
+length2++;
+}
+return (dest);
 }
 /**
  * _strchr - fucntion that is mintioned in another code
@@ -92,13 +92,14 @@ char *_strncat(char *dest, char *src, int n)
  */
 char *_strchr(char *s, char c)
 {
-    int i;
-    for (i = 0; s[i] != 0; i++)
-    {
-        if (s[i] == c)
-        return (s + i);
-    }
-    if (s[i] == c)
-	    return (s + i);
-    return ('\0');
+int i = 0;
+while (s[i] != 0)
+{
+if (s[i] == c)
+return (s + i);
+i++;
+}
+if (s[i] == c)
+	return (s + i);
+return ('\0');
 }
