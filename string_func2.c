@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * atos - fucntion that is mintioned in another code
+ * Atos - function that is mentioned in another code
  * Description: for simple shell task
  * @str: an argument
  * @number: an argument
