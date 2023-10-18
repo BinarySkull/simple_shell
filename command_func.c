@@ -3,7 +3,7 @@
  * exit_func - to exit safely
  * Description: for simple shell task
  * @arg: an argument
- * Return: 1 on sucess
+ * Return: 1 on success
 */
 int exit_func(_arg *arg)
 {
