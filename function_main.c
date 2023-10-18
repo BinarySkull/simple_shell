@@ -3,7 +3,7 @@
  * new_line - to make new command
  * Description: for simple shell task
  * @signal: an argument
- * Return: 1 on sucess
+ * Return: 1 on success
 */
 void new_line(int signal)
 {
