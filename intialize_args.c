@@ -6,7 +6,7 @@
  * @argc: an argument
  * @argv: an argument
  * @env: an argument
- * Return: 1 on sucess
+ * Return: 1 on success
 */
 void initialize_args(_arg *arg, int argc, char **argv, char **env)
 {
