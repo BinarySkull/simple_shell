@@ -5,7 +5,7 @@
  * @argc: an argument
  * @argv: an argument
  * @env: an argument
- * Return: 1 on sucess
+ * Return: 1 on success
 */
 int main(int argc, char **argv, char **env)
 {
