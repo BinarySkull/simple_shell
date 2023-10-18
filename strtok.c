@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _strtok - function is called ny another file called main.c
+ * _strtok - function is called by another file called main.c
  * Description: For Alx project malloc
  * @sign: an argument
  * @str: an argument
