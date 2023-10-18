@@ -4,7 +4,7 @@
  * Description: For Alx project malloc
  * @sign: an argument
  * @str: an argument
- * Return: 0 on successs
+ * Return: 0 on success
  */
 char *_strtok(char *str, const char *sign)
 {
