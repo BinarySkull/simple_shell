@@ -7,7 +7,7 @@
  * @buff: an argument
  * @i: an argument
  * @m: an argument
- * Return: 1 on sucess
+ * Return: 1 on success
 */
 char *realloc_handler(_arg *arg, char *temp, int *buff, int i, int m)
 {
