@@ -1,8 +1,8 @@
 #include "main.h"
 /**
  * _putchar - prints a character
- * Description: print a single character and send number of bytes written
- * @c: a signle char
+ * Description: print a single character and send a number of bytes written
+ * @c: a single char
  * Return: 1 on sucess
 */
 
