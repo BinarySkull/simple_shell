@@ -13,18 +13,3 @@ int _putchar(char c)
 	i = write(1, &c, 1);
 	return (i);
 }
-
-/**
- * _puts - prints a complete string
- * Description: it send every char to _putchar to print
- * @str: '*str' is a pointer pointing the first char in the string
- * Return: void
- */
-
-void _puts(char *str)
-{
-	unsigned int counter_str;
-
-	for (counter_str;str[counter_str] != 0; counter_str++)
-		_putchar(str[counter_str]);
-}

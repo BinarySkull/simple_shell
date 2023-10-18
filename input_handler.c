@@ -91,7 +91,7 @@ char *_env(char **enviroment, char *env, int length)
 {
 	int i, flag;
 
-	while (i = 0; enviroment[i] != NULL; i++)
+	for (i = 0; enviroment[i] != NULL; i++)
 	{
 		flag = _strncmp(enviroment[i], env, length);
 		if (flag == 0)
