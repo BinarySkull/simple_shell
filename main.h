@@ -13,6 +13,9 @@
 #include <errno.h>
 
 
+int _strlen(char* str);
+char* get_path(char* name, char** environment);
+int _strncmp(char *s1, char *s2, int n):
 
 
 
