@@ -22,3 +22,51 @@ int _strncmp(char *s1, char *s2, int n)
     return 0;
 }
 
+
+char *_strdup(char *s)
+{
+    char *dup;
+    int i;
+    int len;
+    if (s == NULL)
+        return NULL;
+
+    len = 0;
+    while (s[len] != '\0')
+        len++;
+
+    dup = malloc(len + 1);
+    if (dup == NULL)
+        return NULL;
+
+    for (i = 0; i <= len; i++)
+        dup[i] = s[i];
+
+    return dup;
+}
+
+
+char *_strcat(char *dest, char *src)
+{
+    char *p = dest;
+
+    while (*p != '\0')
+        p++;
+
+    while (*src != '\0')
+        *p++ = *src++;
+
+    *p = '\0';
+    return dest;
+}
+
+
+char *_strjoin(char *a, char *b, char *c) {
+    size_t len = strlen(a) + strlen(b) + strlen(c) + 1;
+    char *res = malloc(len);
+    if (!res) return NULL;
+    strcpy(res, a);
+    strcat(res, b);
+    strcat(res, c);
+    return res;
+}

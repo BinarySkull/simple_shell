@@ -6,17 +6,20 @@
 
 int main(int argc, char** argv, char** env)
 {
-    char** path, copy_path, dir;
-    int len = _strlen(argv[1]);
-
-    // path = 
+    (void)argc;
+    (void)argv;
 
     if (isatty(STDIN_FILENO) == 1)
     {
         while(1)
         {
-            
+            printf("#cisfun$ ");
+            run_command(env);
         }
+    }
+    else
+    {
+        run_command(env);
     }
 
     return 0;

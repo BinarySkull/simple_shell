@@ -14,9 +14,15 @@
 
 
 int _strlen(char* str);
-char* get_path(char* name, char** environment);
-int _strncmp(char *s1, char *s2, int n):
+int _strncmp(char *s1, char *s2, int n);
+char *_strdup(char *s);
+char *_strcat(char *dest, char *src);
+char *_strjoin(char *a, char *b, char *c);
 
+char* get_path(char** environment);
+char* get_check_dir(char*path, char* name);
+char* find_command_dir(char** environment, char* name);
 
+void run_command(char** env);
 
 #endif
