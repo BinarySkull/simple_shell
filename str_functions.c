@@ -70,3 +70,21 @@ char *_strjoin(char *a, char *b, char *c) {
     strcat(res, c);
     return res;
 }
+
+
+/**
+ * _strcpy - copies the string pointed to by src to dest
+ * @dest: pointer to the destination buffer
+ * @src: pointer to the source string
+ *
+ * Return: pointer to dest
+ */
+char *_strcpy(char *dest, const char *src)
+{
+    char *ptr = dest;
+
+    while ((*dest++ = *src++) != '\0')
+        ;
+
+    return ptr;
+}
