@@ -15,6 +15,7 @@
  */
 int main(int argc, char** argv, char** env)
 {
+    int res;
     (void)argc;
     (void)argv;
 
@@ -23,7 +24,11 @@ int main(int argc, char** argv, char** env)
         while(1)
         {
             printf("#cisfun$ ");
-            run_command(env);
+            res = run_command(env);
+            if (res == 1) /* exit */
+                break;
+            else if (res == -1) /* EOF */
+                break;
         }
     }
     else

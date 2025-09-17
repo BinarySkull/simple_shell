@@ -23,6 +23,7 @@
 int _strlen(char *str);
 int _strlen_douple_ptrs(char **str);
 int _strncmp(char *s1, char *s2, int n);
+int _strcmp(char *s1, char *s2);
 char *_strdup(char *s);
 char *_strcat(char *dest, char *src);
 char *_strjoin(char *a, char *b, char *c);
@@ -38,6 +39,6 @@ char **parse_input(char *line);
 void free_args(char **args);
 
 /* ========= Command execution ========= */
-void run_command(char **env);
+int run_command(char **env);
 
 #endif /* MAIN_H */

@@ -13,7 +13,7 @@
  *
  * Frees allocated memory before returning.
  */
-void run_command(char** env)
+int run_command(char** env)
 {
     char* dir = NULL, *line = NULL, *if_dir = NULL, *copy_line;
     char **args;
@@ -25,7 +25,15 @@ void run_command(char** env)
     read = getline(&line, &len, stdin);
 
     if (read != -1)
-        line[read - 1] = '\0'; 
+        line[read - 1] = '\0';
+    else
+        return (-1);
+
+    if (_strcmp(line, "exit") == 0)
+    {
+        free(line);
+        return (1);
+    }
     
     copy_line = _strdup(line);
     if_dir = strtok(copy_line, " \t\n");
@@ -38,9 +46,9 @@ void run_command(char** env)
         dir = find_command_dir(env, if_dir);
     }
 
+    free(copy_line);
     if (dir != NULL)
     {
-        free(copy_line);
         args = parse_input(line);
         free(args[0]);
         args[0] = dir;
@@ -52,7 +60,7 @@ void run_command(char** env)
             free(line);
             free_args(args);
             free(dir);
-            return;
+            return (-1);
         }
 
         if (pid == 0)
@@ -60,17 +68,17 @@ void run_command(char** env)
             if (execve(dir, args, env) == -1)
             {
                 perror("execve");
-                free_args(args);
-                free(dir);
                 free(line);
-                exit(EXIT_FAILURE);
+                free_args(args);
+                _exit(EXIT_FAILURE);
             }
         }
         else
         {
             wait(&status);
         }
-        free(line);
         free_args(args);
     }   
+    free(line);
+    return (0);
 }
