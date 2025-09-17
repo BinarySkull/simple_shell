@@ -12,22 +12,32 @@
 #include <string.h>
 #include <errno.h>
 
+/**
+ * File: main.h
+ * Description: Header file for the simple shell project.
+ * Contains library includes and prototypes for all helper
+ * functions, organized into logical groups.
+ */
 
-int _strlen(char* str);
-int _strlen_douple_ptrs(char** str);
+/* ========= String utility functions ========= */
+int _strlen(char *str);
+int _strlen_douple_ptrs(char **str);
 int _strncmp(char *s1, char *s2, int n);
 char *_strdup(char *s);
 char *_strcat(char *dest, char *src);
 char *_strjoin(char *a, char *b, char *c);
 char *_strcpy(char *dest, const char *src);
 
-char* get_path(char** environment);
-char* get_check_dir(char*path, char* name);
-char* find_command_dir(char** environment, char* name);
+/* ========= PATH handling functions ========= */
+char *get_path(char **environment);
+char *get_check_dir(char *path, char *name);
+char *find_command_dir(char **environment, char *name);
 
-char** parse_input(char *line);
+/* ========= Input parsing functions ========= */
+char **parse_input(char *line);
 void free_args(char **args);
 
-void run_command(char** env);
+/* ========= Command execution ========= */
+void run_command(char **env);
 
-#endif
+#endif /* MAIN_H */

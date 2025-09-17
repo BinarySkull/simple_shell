@@ -1,9 +1,11 @@
 #include "main.h"
 
-/*
-* this file includes functions that handles environment variable and get the path from it
-*/
-
+/**
+ * get_path - Retrieves the PATH variable from the environment.
+ * @environment: Array of environment variables.
+ *
+ * Return: Pointer to PATH string (within environment), or NULL if not found.
+ */
 char* get_path(char** environment)
 {
     char* path = NULL;
@@ -29,8 +31,16 @@ char* get_path(char** environment)
     return path;
 }
 
-
-char* get_check_dir(char*path, char* name) /* don't forget to free the allocated string */
+/**
+ * get_check_dir - Searches PATH directories for an executable command.
+ * @path: PATH string (colon-separated directories).
+ * @name: Command name to search for.
+ *
+ * Return: Newly allocated string with full path to the command if found,
+ *         or NULL if not found or on failure.
+ * Note: Caller must free the returned string.
+ */
+char* get_check_dir(char*path, char* name)
 {
     struct stat st;
     char* dir, *full_dir;
@@ -72,6 +82,13 @@ char* get_check_dir(char*path, char* name) /* don't forget to free the allocated
     return NULL;
 }
 
+/**
+ * find_command_dir - Finds the full path of a command using environment PATH.
+ * @environment: Array of environment variables.
+ * @name: Command name.
+ *
+ * Return: Full path to command (malloc'ed) if found, or NULL on failure.
+ */
 char* find_command_dir(char** environment, char* name)
 {
     char* path = get_path(environment);

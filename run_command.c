@@ -1,9 +1,18 @@
 #include "main.h"
 
-/*
-* the function that executes and runs the command
-*/
-
+/**
+ * run_command - Reads a command from stdin and executes it.
+ * @env: Array of environment variables.
+ *
+ * This function:
+ *  - Reads user input.
+ *  - Resolves the command path (directly or via PATH).
+ *  - Parses the input into arguments.
+ *  - Forks a child process to run the command with execve().
+ *  - Waits for the child process to finish.
+ *
+ * Frees allocated memory before returning.
+ */
 void run_command(char** env)
 {
     char* dir = NULL, *line = NULL, *if_dir = NULL, *copy_line;

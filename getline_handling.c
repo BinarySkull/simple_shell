@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * parse_input - Splits a command line into arguments.
+ * @line: Input string to tokenize.
+ *
+ * Return: Array of argument strings (NULL-terminated), or NULL on failure.
+ *         Memory for each token and the array must be freed with free_args().
+ */
 char** parse_input(char *line)
 {
     char** args;
@@ -34,7 +41,12 @@ char** parse_input(char *line)
     return args;
 }
 
-
+/**
+ * free_args - Frees memory allocated for an arguments array.
+ * @args: NULL-terminated array of strings created by parse_input().
+ *
+ * Frees each string in the array, then frees the array itself.
+ */
 void free_args(char **args)
 {
     int i = 0;

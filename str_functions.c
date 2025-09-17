@@ -1,10 +1,13 @@
 #include "main.h"
 
-/*
-* this file will contain all string functions that will be used in the project
-*/
-
-
+/**
+ * _strncmp - Compares two strings up to n characters.
+ * @s1: First string.
+ * @s2: Second string.
+ * @n: Maximum number of characters to compare.
+ *
+ * Return: 0 if equal, positive/negative value based on difference.
+ */
 int _strncmp(char *s1, char *s2, int n)
 {
     int i = 0;
@@ -22,7 +25,12 @@ int _strncmp(char *s1, char *s2, int n)
     return 0;
 }
 
-
+/**
+ * _strdup - Duplicates a string into newly allocated memory.
+ * @s: Input string.
+ *
+ * Return: Pointer to the duplicated string, or NULL on failure.
+ */
 char *_strdup(char *s)
 {
     char *dup;
@@ -45,7 +53,13 @@ char *_strdup(char *s)
     return dup;
 }
 
-
+/**
+ * _strcat - Concatenates src string to dest string.
+ * @dest: Destination string (must have enough space).
+ * @src: Source string.
+ *
+ * Return: Pointer to dest.
+ */
 char *_strcat(char *dest, char *src)
 {
     char *p = dest;
@@ -60,7 +74,14 @@ char *_strcat(char *dest, char *src)
     return dest;
 }
 
-
+/**
+ * _strjoin - Concatenates three strings into a new string.
+ * @a: First string.
+ * @b: Second string.
+ * @c: Third string.
+ *
+ * Return: Newly allocated concatenated string, or NULL on failure.
+ */
 char *_strjoin(char *a, char *b, char *c) {
     size_t len = strlen(a) + strlen(b) + strlen(c) + 1;
     char *res = malloc(len);
@@ -70,7 +91,6 @@ char *_strjoin(char *a, char *b, char *c) {
     strcat(res, c);
     return res;
 }
-
 
 /**
  * _strcpy - copies the string pointed to by src to dest

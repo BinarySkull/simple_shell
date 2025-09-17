@@ -1,9 +1,18 @@
 #include "main.h"
 
-/*
-* here will be the main shell function
-*/
-
+/**
+ * main - Entry point for the simple shell program.
+ * @argc: Argument count (unused).
+ * @argv: Argument vector (unused).
+ * @env:  Environment variables.
+ *
+ * Description:
+ *   - If running in interactive mode (tty), displays a prompt and repeatedly
+ *     calls run_command() to read and execute commands.
+ *   - If running in non-interactive mode (e.g., script/pipe), executes once.
+ *
+ * Return: Always 0 on success.
+ */
 int main(int argc, char** argv, char** env)
 {
     (void)argc;
