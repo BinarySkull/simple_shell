@@ -6,7 +6,7 @@
  * @s: '*s' is a pointer
  * Return: length of string
  */
-int _strlen(char* str)
+int _strlen(char *str)
 {
 	int i;
 
@@ -15,5 +15,5 @@ int _strlen(char* str)
 		i++;
 	}
 
-	return i;
+	return (i);
 }

@@ -38,36 +38,39 @@ void run_command(char** env)
         dir = find_command_dir(env, if_dir);
     }
 
-    free(copy_line);
-    args = parse_input(line);
-    free(args[0]);
-    args[0] = dir;
-
-    pid = fork();
-    if (pid == -1)
+    if (dir != NULL)
     {
-        perror("fork");
-        free(line);
-        free_args(args);
-        free(dir);
-        return;
-    }
+        free(copy_line);
+        args = parse_input(line);
+        free(args[0]);
+        args[0] = dir;
 
-    if (pid == 0)
-    {
-        if (execve(dir, args, env) == -1)
+        pid = fork();
+        if (pid == -1)
         {
-            perror("execve");
+            perror("fork");
+            free(line);
             free_args(args);
             free(dir);
-            free(line);
-            exit(EXIT_FAILURE);
+            return;
         }
-    }
-    else
-    {
-        wait(&status);
-    }
-    free(line);
-    free_args(args);
+
+        if (pid == 0)
+        {
+            if (execve(dir, args, env) == -1)
+            {
+                perror("execve");
+                free_args(args);
+                free(dir);
+                free(line);
+                exit(EXIT_FAILURE);
+            }
+        }
+        else
+        {
+            wait(&status);
+        }
+        free(line);
+        free_args(args);
+    }   
 }

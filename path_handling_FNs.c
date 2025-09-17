@@ -78,7 +78,7 @@ char* get_check_dir(char*path, char* name)
     }
 
     free(cpy_path);
-    fprintf(stderr, "sh: %s: not found", name);
+    fprintf(stderr, "sh: %s: not found\n", name);
     return NULL;
 }
 

@@ -7,31 +7,30 @@
  * Return: Array of argument strings (NULL-terminated), or NULL on failure.
  *         Memory for each token and the array must be freed with free_args().
  */
-char** parse_input(char *line)
+char **parse_input(char *line)
 {
-    char** args;
-    char* arg;
+    char **args;
+    char *arg;
     int i = 0, len;
 
     len = _strlen(line);
     args = malloc(sizeof(char *) * (len / 2 + 2));
-    if(!args)
+    if (!args)
     {
         perror("malloc");
-        return NULL;
+        return (NULL);
     }
-
     arg = strtok(line, " \t\n");
-
-    while(arg != NULL)
+    while (arg != NULL)
     {
         args[i] = _strdup(arg);
         if(!args[i])
         {
-            while (i > 0) free(args[--i]);
+            while (i > 0)
+                free(args[--i]);
             free(args);
             perror("malloc");
-            return NULL;
+            return (NULL);
         }
         arg = strtok(NULL, " \t\n");
         i++;
